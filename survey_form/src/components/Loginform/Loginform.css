@@ -40,3 +40,8 @@ label{
 hr{
     color: #808080;
 }
+
+.error{
+    color:red;
+    margin-left: 60px;
+}
