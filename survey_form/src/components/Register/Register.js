@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Register.css";
 import { Link } from "react-router-dom";
 function Register() {
+
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -120,4 +121,4 @@ function Register() {
   );
 }
 
-export default Register;
+export default Register
