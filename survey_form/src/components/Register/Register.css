@@ -99,6 +99,8 @@ input:focus {
 .terms > h6 {
   text-align: center;
 }
-.errors {
-  color: red;
+
+.errMsg {
+    color: red;
+    text-align: center;
 }
