@@ -1,6 +1,7 @@
 import React from 'react'
 import './Postform.css'
 import { useNavigate } from 'react-router-dom'
+import Sidebar from '../Side_Navbar/Sidebar'
 function Postform() {
 
 const navigate = useNavigate()
