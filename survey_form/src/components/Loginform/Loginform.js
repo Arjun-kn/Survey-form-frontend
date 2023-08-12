@@ -26,7 +26,7 @@ export default function Loginform() {
       setError("password should not be more than 10 character");
     } else {
       try {
-        let response = await fetch("http://localhost:8080/login", {
+        let response = await fetch("http://localhost:8080/signin", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -36,11 +36,14 @@ export default function Loginform() {
             password: data.password,
           }),
         });
+        // console.log(response)
         const responseData = await response.json();
+        console.log(responseData)
         if (response.ok) {
           setError("");
-          const token = responseData.token;
-          console.log(token);
+
+          const token = responseData
+          // console.log(token);
           sessionStorage.setItem("token", token);
           navigate("/postdata");
         } else {
@@ -50,6 +53,7 @@ export default function Loginform() {
         console.log(data);
         setError("An error occurred. Please try again later");
       }
+
     }
 
     setTimeout(() => {

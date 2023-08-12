@@ -1,21 +1,23 @@
 import React, { useState } from "react";
 import "./Register.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 function Register() {
 
   const [user, setUser] = useState({
     name: "",
     email: "",
-    phoneNumber: "",
+    phone: "",
     profession: "",
     password: "",
   });
 
-  async function submitHandler(e) {
-    e.preventDefault();
+  let navigate =  useNavigate()
 
+  async function submitHandler(e) {
+    e.preventDefault()
+    
     try {
-      await fetch("http://localhost:8080/register", {
+      const response = await fetch("http://localhost:8080/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -23,15 +25,30 @@ function Register() {
         body: JSON.stringify({
           name: user.name,
           email: user.email,
-          phoneNumber: user.phoneNumber,
+          phone: user.phone,
           profession: user.profession,
           password: user.password,
-        }),
+        })
+        
       });
+
+      if (response.ok) {
+        navigate('/')
+        
+        const responseData = await response.json();
+        console.log("Backend response:", responseData);
+      } else {
+        // Handle error response
+        const errorResponseData = await response.text();
+        console.log("Error response from backend:", errorResponseData);
+      }
+
     } catch (error) {
-      //console.log(data);
-      console.log(error);
+    
+      console.log( "errdesc" + error);
     }
+
+    console.log(user)
   }
 
   return (
@@ -55,7 +72,7 @@ function Register() {
       <div className="card">
         <h1>Register</h1>
         <p>Register to continue access pages</p>
-        <form onSubmit={submitHandler} className="inputs">
+        <form onSubmit={submitHandler} method="POST" className="inputs">
           <div className="inputContainer">
             <input
               required
@@ -79,9 +96,9 @@ function Register() {
               type="number"
               name="Mobile"
               placeholder="Phone"
-              value={user.phoneNumber}
+              value={user.phone}
               onChange={(e) =>
-                setUser({ ...user, phoneNumber: e.target.value })
+                setUser({ ...user, phone: e.target.value })
               }
             />
             <input
