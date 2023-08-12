@@ -1,4 +1,4 @@
-.container {
+.form-container {
   width: 100%;
   height: 100vh;
   display: flex;
@@ -95,6 +95,8 @@ input:focus {
 .terms {
   color: #278df1;
   text-decoration: underline;
+  margin-bottom: 30px;
+  margin-top: 40px;
 }
 .terms > h6 {
   text-align: center;

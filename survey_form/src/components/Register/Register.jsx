@@ -75,7 +75,7 @@ function Register() {
   }
 
   return (
-    <div className="container">
+    <div className="form-container">
       <div className="text-container">
         <h1>
           Welcome Page <br />
