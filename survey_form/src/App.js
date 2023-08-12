@@ -3,6 +3,8 @@ import './App.css';
 import Login from './components/Login/Login';
 import { BrowserRouter,Routes, Route } from 'react-router-dom';
 import Register from './components/Register/Register';
+import Postform from './components/Postform/Postform';
+import Dashboard from './components/Dashboard/Dashboard';
 
 
 function App() {
@@ -12,6 +14,8 @@ function App() {
 <Routes>
 <Route  path="/" element={<Login/>}/>
 <Route path="/register" element={<Register />} />
+<Route path="/home"  element={<Dashboard/>}/>
+<Route path="/postform"  element={<Postform/>} />
 </Routes>
 </BrowserRouter>
 </>

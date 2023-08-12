@@ -45,7 +45,7 @@ export default function Loginform() {
           const token = responseData
           // console.log(token);
           sessionStorage.setItem("token", token);
-          navigate("/postdata");
+          navigate("/home");
         } else {
           setError("Invalid credential");
         }
