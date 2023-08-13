@@ -5,7 +5,7 @@
 }
 
 .cardStyle {
-    width: 70%;
+    width: 80%;
     height: 150px;
     background-color: #F4F8FD;
     margin: 15px auto;
@@ -103,7 +103,7 @@
     height: 26px;
     border: none;
     background: transparent url('./gear.png') 0% 0% no-repeat padding-box;
-    margin-left: 500px;
+    margin-left: 800%;
 }
 
 .questionType {

@@ -7,15 +7,12 @@
 }
 
 .cardStyle {
-    width: 70%;
-    height: 150px;
+    width: 75%;
+    height: 100px;
     background-color: #F4F8FD;
     margin: 15px auto;
     font-size: 14px;
     padding-left: 30px;
-}
-.card:hover {
-    border: 2px solid #278DF1;
 }
 .cardStyle>label {
     font-size: 14px;
@@ -74,14 +71,31 @@
 .closepreview-btn {
     background-color: #278DF1;
     color: #FFFFFF;
+    font-size: 16px;
 }
 
 .save-btn {
     background-color: #278DF1;
     color: #fff;
-    width: 100px;
+    width: 150px;
+    height: 40px;
     text-align: center;
     font: normal normal bold 16px/22px Open Sans;
     letter-spacing: 0.16px;
     opacity: 1;
+}
+.question-clr {
+    color: #278DF1;
+}
+
+.cardStyle > h6 {
+    font-size: 16px;
+}
+.option-container > label {
+    margin-left: 20px;
+    font-size: 14px;
+}
+.option-container > input {
+    margin: 10px;
+    padding: 20px;
 }

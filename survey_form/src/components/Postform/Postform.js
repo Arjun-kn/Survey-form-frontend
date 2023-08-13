@@ -44,6 +44,8 @@ console.log(response.data)
 function handleCancel(){
     navigate('/home')
 }
+
+
   return (
 <>
 <Sidebar/>
@@ -53,6 +55,8 @@ function handleCancel(){
         <section className='btnsec'>
             <button onClick={handleCancel}>Cancel</button>
             <button onClick={saveData}>Next</button>
+         
+
              </section>
     </div>
 
