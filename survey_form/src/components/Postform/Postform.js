@@ -5,6 +5,27 @@ import Sidebar from '../Side_Navbar/Sidebar'
 function Postform() {
 
 const navigate = useNavigate()
+const [error,setError] = useState("")
+//..................................................
+
+const [selectedFile, setSelectedFile] = useState(null);
+
+function handleFileChange(e) {
+    const file = e.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = event => {
+            setSelectedFile(event.target.result);
+        };
+        reader.readAsDataURL(file);
+    }
+}
+
+
+
+
+// let currentValue = extractImage.current.files[0]
+// console.log(currentValue)
 
 const [newdata,setnewData] = useState({
     Name:"",
@@ -22,6 +43,18 @@ function handleSubmit(e){
 }
 
 function saveData(){
+    const isAnyFieldEmpty = Object.values(newdata).some(value => value === "");
+
+    if (isAnyFieldEmpty) {
+        setError("Please fill in all the fields before proceeding.");
+        setTimeout(()=>{
+            setError("")
+        },3000)
+        return;
+    }
+
+    setError(""); 
+    
     const token = sessionStorage.getItem('token');
     fetch(`http://localhost:8080/userpost`, {
       method: 'POST',
@@ -59,6 +92,7 @@ function handleCancel(){
 
              </section>
     </div>
+    {error !== "" && (<div className='editerror'>{error}</div>)}
 
     <form className='frma' method="POST" onSubmit={handleSubmit}>
     
@@ -92,9 +126,9 @@ function handleCancel(){
            <textarea className='criteria' placeholder='Enter Here' ></textarea>
             </div>
             <div>
-                <label>Upload Image</label>
-                <input className='imagefile' type='file' ></input>
-                <div className='copyimg'></div>
+                <label>Upload Image
+                <input className='imagefile' type='file'   onChange={handleFileChange} ></input></label>
+                <div className='copyimg'> {selectedFile && <img className='imgsec' src={selectedFile} alt="uploaded" />}</div>
             </div>
         </div>
        

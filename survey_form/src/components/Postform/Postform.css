@@ -125,14 +125,30 @@
     font-size: 15px
  }
 
+
  .imagefile{
-    display: none;
+   display: none;
  }
+
 
  .copyimg{
     width:200px;
     height:60px;
     background-color:#CCCCCC;
+ }
+
+ .imgsec{
+   width:100%;
+   height:100%;
+   background-size: cover;
+ }
+
+
+ .editerror{
+   color:red;
+   margin-top: 40px;
+   margin-left:100px;
+   text-shadow: 1px 1px 1px #000;
  }
 
  
