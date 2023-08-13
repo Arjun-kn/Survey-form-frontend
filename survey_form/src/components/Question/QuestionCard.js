@@ -8,15 +8,17 @@ import Sidebar from '../Side_Navbar/Sidebar';
 
 
 const QuestionCard = () => {
-  const [questions, setQuestions] = useState([{ questionNo: 1 }]);
-  const [popup, setPopup] = useState(false)
-  const handleBtn = () => {
-    setPopup(!popup)
+  const [questions, setQuestions] = useState([{ questionNo: 1, popup : false }]);
+  const handleBtn = (index) => {
+    const newQuestions = [...questions];
+    newQuestions[index].popup = !newQuestions[index].popup;
+    setQuestions(newQuestions);
   }
+  
   const navigate = useNavigate()
   const handleCardClick = () => {
     const newQuestionNo = questions.length + 1;
-    const newQuestion = { questionNo: newQuestionNo };
+    const newQuestion = { questionNo: newQuestionNo, popup : false };
     setQuestions([...questions, newQuestion]);
   };
   return (
@@ -36,8 +38,8 @@ const QuestionCard = () => {
             <div className="question-setting"><span>
             <h6>Q{index + 1}
               <span className="setting-card">
-                <button onClick={(e) => handleBtn(e)}>
-                  {popup ? (<form>
+                <button onClick={() => handleBtn(index)}>
+                  {question.popup ? (<form>
                     <label className="questionType" htmlFor="questionType">Question-Type</label>
                     <select className="selectQuestion" name="QuestionType" id="questionType">
                       <option value="Multiple Choice">Multiple Choice</option>
@@ -64,5 +66,4 @@ const QuestionCard = () => {
     </div>
   );
 }
-
 export default QuestionCard
