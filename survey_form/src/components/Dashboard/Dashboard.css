@@ -2,7 +2,9 @@
 .app {
     display: flex;
     background-color: white;
+   
   }
+ 
   
   .sidebar {
     width: 60px;
@@ -11,9 +13,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 80px;
+    /* padding-top: 80px; */
     height: 100vh;
-    margin-top: 65px;
+    /* margin-top: 65px; */
+    position: absolute;
   }
   
   .sidebar-icon {
@@ -28,13 +31,13 @@
   }
   
   .navbar {
-    margin-left: -70px;
     background-color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
   }
   
   .logo {
@@ -114,12 +117,13 @@ tr:nth-child(even) {
 }
 
 .search-input {
-  margin-left: 30px;
+  margin-left: 100px;
   margin-top: 10px;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-right: 12px;
+  position: relative;
 }
 
 
@@ -158,4 +162,7 @@ tr:nth-child(even) {
 
 .menu-icon{
   filter: invert(100%);
+}
+.table{
+  margin-left: 60px;
 }

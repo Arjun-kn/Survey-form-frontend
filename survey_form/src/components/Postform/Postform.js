@@ -11,6 +11,7 @@ function handleCancel(){
 }
   return (
 <>
+<Sidebar/>
 <div className="prnta">
     <div className='headersec'>
         <h3>Create Survey</h3>

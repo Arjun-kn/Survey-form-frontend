@@ -50,14 +50,6 @@ function Dashboard() {
     .catch(error => console.error('Error deleting post:', error));
   };
 
-  const handleEditClick = (postId) => {
-    setEditMode(prevState => ({
-      ...prevState,
-      [postId]: true
-    }));
-  };
-
-
   return (
     <div >
       <Sidebar/>
@@ -76,7 +68,7 @@ function Dashboard() {
           <button className="create-button" onClick={handleCreate}>Create</button>
         </div>
       </div>
-      <table>
+      <table className='table'>
         <thead>
           <tr>
             <th>Name</th>
@@ -90,32 +82,15 @@ function Dashboard() {
         <tbody>
           {data.map(item => (
             <tr key={item._id}>
-             <td>{editMode[item._id] ? <input type="text" value={item.Name} /> : item.Name}</td>
-                <td>{editMode[item._id] ? <input type="text" value={item.Description} /> : item.Description}</td>
-                <td>{editMode[item._id] ? <input type="text" value={item.Type} /> : item.Type}</td>
-                <td>{editMode[item._id] ? <input type="text" value={item.Start_DateDate} /> : item.Start_Date}</td>
-                <td>{editMode[item._id] ? <input type="text" value={item.End_DateDate} /> : item.End_Date}</td>
-                <td>
-                  {editMode[item._id] ? (
-                    <>
-                    </>
-                  ) : (
-                    <>
-                      <img
-                        src={edit}
-                        alt="edit"
-                        onClick={() => handleEditClick(item._id)}
-                        style={{ height: '26px', width: '26px', filter: 'invert(50%)' }}
-                      />
-                      <img
-                        src={bin}
-                        alt="delete"
-                        onClick={() => handleDeletePost(item._id)}
-                        style={{ height: '26px', width: '26px', filter: 'invert(50%)' }}
-                      />
-                    </>
-                  )}
-                </td>
+              <td>{item.Name}</td>
+              <td>{item.Description}</td>
+              <td>{item.Type}</td>
+              <td>{item.Star_Date}</td>
+              <td>{item.End_Date}</td>
+              <td>
+               <img src={edit} alt="edit" style={{height:"26px",width:"26px",filter:"invert(50%)",margin:"5px"}} />
+               <img src={bin} alt="delete" onClick={() => handleDeletePost(item.id)} style={{height:"26px",width:"26px",filter:"invert(50%)"}} />
+              </td>
             </tr>
           ))}
         </tbody>
