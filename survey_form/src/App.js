@@ -5,6 +5,9 @@ import { BrowserRouter,Routes, Route } from 'react-router-dom';
 import Register from './components/Register/Register';
 import Postform from './components/Postform/Postform';
 import Dashboard from './components/Dashboard/Dashboard';
+import QuestionCard from './components/Question/Question';
+import Theme from './components/Theme/Theme';
+import Preview from './components/Preview/Preview';
 
 
 function App() {
