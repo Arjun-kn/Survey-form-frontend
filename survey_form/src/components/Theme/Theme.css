@@ -3,12 +3,13 @@
     margin: auto auto;
     justify-content: center;
     color: #242526;
+    
 }
 
 
 .form {
-    width: 1000px;
-    height: 550px;
+    width: 800px;
+    height: 450px;
     top: 154px;
     left: 374px;
     background: #fff;

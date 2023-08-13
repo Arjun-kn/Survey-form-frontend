@@ -30,7 +30,7 @@ const Sidebar=()=>{
             <img
               src="https://cdn.gulte.com/wp-content/uploads/2022/06/Ram-Charan-1.jpg"  alt="useimage"/>
             <img src={drop} alt="dropdown" 
-            onClick={toggleDropdown} style={{width:"26px",height:"26px",filter:"invert(50%)"}} />
+            onClick={toggleDropdown} className="drop" style={{width:"26px",height:"26px",filter:"invert(50%)"}} />
             {showDropdown && (
               <div className="dropdown">
                 <ul>

@@ -7,7 +7,7 @@ import Postform from './components/Postform/Postform';
 import Dashboard from './components/Dashboard/Dashboard';
 import QuestionCard from './components/Question/Question';
 import Theme from './components/Theme/Theme';
-import Preview from './components/Preview/Preview';
+
 
 
 function App() {
@@ -19,6 +19,8 @@ function App() {
 <Route path="/register" element={<Register />} />
 <Route path="/home"  element={<Dashboard/>}/>
 <Route path="/postform"  element={<Postform/>} />
+<Route path='/theme' element={<Theme/>}/>
+<Route path='/questions' element={<QuestionCard/>}/>
 </Routes>
 </BrowserRouter>
 </>

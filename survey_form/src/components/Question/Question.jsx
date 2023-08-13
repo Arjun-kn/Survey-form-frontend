@@ -1,11 +1,11 @@
 import React from 'react';
 import { useState } from "react";
 import '../Question/Question.css'
-import { Link, useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 import gear from '../Question/gear.png'
 import leftArrow from '../Question/left-arrow.png'
 import Sidebar from '../Side_Navbar/Sidebar';
-
+import ThemeWrapper from '../Wrapper/Wrapper';
 
 const QuestionCard = () => {
   const [questions, setQuestions] = useState([{ questionNo: 1 }]);
@@ -13,12 +13,13 @@ const QuestionCard = () => {
   const handleBtn = () => {
     setPopup(!popup)
   }
-  const navigate = useNavigate()
+  
   const handleCardClick = () => {
     const newQuestionNo = questions.length + 1;
     const newQuestion = { questionNo: newQuestionNo };
     setQuestions([...questions, newQuestion]);
   };
+
   return (
     <div>
       <Sidebar />
@@ -26,7 +27,7 @@ const QuestionCard = () => {
         <div className="question-header">
           <Link><img src={leftArrow} alt="leftArrow" /></Link> <span>Create Question</span>
           <div className="btn-container">
-            <button className="theme-btn" onClick={(e) => navigate('/theme')}><img src={gear} alt="gear" />Theme Setting</button>
+            <ThemeWrapper/>
             <button className="previewbtn">Preview</button>
             <button className="savebtn">Save</button>
           </div>

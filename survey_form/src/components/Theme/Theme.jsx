@@ -1,14 +1,14 @@
 import React from 'react'
 import '../Theme/Theme.css'
-import close from '../Theme/Assets/close.png'
-import { Link } from 'react-router-dom'
-function Theme() {
+
+function Theme(onClose) {
+ 
   return (
-    <div className='container'>
+       <div>
+         <div className='container'>
       <form className='form'>
         <div className='form-header'>
           <h3 className='themse-setting'>Theme Setting</h3>
-          <nav><Link to='/'><img height='20px' width='20px' src={close} alt='close' /></Link></nav>
         </div>
         <div className='form-content'>
           <div className='theme'>
@@ -96,6 +96,8 @@ function Theme() {
           </footer>
       </form>
     </div>
+       </div>
+   
   )
 }
 

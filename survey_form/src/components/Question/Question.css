@@ -78,6 +78,8 @@
     width: 150px;
     height: 40px;
     border: 2.5px #278DF1;
+    font: normal normal bold 16px/22px Open Sans;
+    color: white;
 }
 
 .savebtn {

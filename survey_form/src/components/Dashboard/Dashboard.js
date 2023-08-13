@@ -10,7 +10,6 @@ import Sidebar from '../Side_Navbar/Sidebar';
 function Dashboard() {
   
   const [data, setData] = useState([]);
-  const [editMode, setEditMode] = useState({})
   const navigate = useNavigate()
 
   function handleCreate(){
