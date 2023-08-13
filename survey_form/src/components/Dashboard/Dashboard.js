@@ -10,7 +10,7 @@ import Sidebar from '../Side_Navbar/Sidebar';
 function Dashboard() {
   
   const [data, setData] = useState([]);
-  const [editMode, setEditMode] = useState({})
+  // const [editMode, setEditMode] = useState({})
   const navigate = useNavigate()
 
   function handleCreate(){
@@ -45,7 +45,9 @@ function Dashboard() {
       }
     })
     .then(response => response.json())
+    
     .then(data => {
+      setData(prevData => prevData.filter(item => item._id !== postId));
     })
     .catch(error => console.error('Error deleting post:', error));
   };
@@ -89,7 +91,7 @@ function Dashboard() {
               <td>{item.End_Date}</td>
               <td>
                <img src={edit} alt="edit" style={{height:"26px",width:"26px",filter:"invert(50%)",margin:"5px"}} />
-               <img src={bin} alt="delete" onClick={() => handleDeletePost(item.id)} style={{height:"26px",width:"26px",filter:"invert(50%)"}} />
+               <img src={bin} alt="delete" onClick={() => handleDeletePost(item._id)} style={{height:"26px",width:"26px",filter:"invert(50%)"}} />
               </td>
             </tr>
           ))}
