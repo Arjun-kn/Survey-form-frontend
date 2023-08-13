@@ -27,7 +27,7 @@ const QuestionCard = () => {
           <Link><img src={leftArrow} alt="leftArrow" /></Link> <span>Create Question</span>
           <div className="btn-container">
             <button className="theme-btn" onClick={(e) => navigate('/theme')}><img src={gear} alt="gear" />Theme Setting</button>
-            <button className="previewbtn">Preview</button>
+            <button className="previewbtn" onClick={() => navigate('/preview')}>Preview</button>
             <button className="savebtn">Save</button>
           </div>
         </div>

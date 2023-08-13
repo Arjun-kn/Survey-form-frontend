@@ -20,6 +20,7 @@ function App() {
 <Route path="/home"  element={<Dashboard/>}/>
 <Route path="/postform"  element={<Postform/>} />
 <Route path="/question"  element={<QuestionCard/>}/>
+<Route path='/preview' element={<Preview />} />
 </Routes>
 </BrowserRouter>
 </>

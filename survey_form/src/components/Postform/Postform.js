@@ -14,6 +14,10 @@ const [newdata,setnewData] = useState({
 function handleCancel(){
     navigate('/home')
 }
+
+const handleNext = () => {
+    navigate('/question')
+}
   return (
 <>
 <Sidebar/>
@@ -22,7 +26,7 @@ function handleCancel(){
         <h3>Create Survey</h3>
         <section className='btnsec'>
             <button onClick={handleCancel}>Cancel</button>
-            <button>Next</button>
+            <button onClick={handleNext}>Next</button>
              </section>
     </div>
 
