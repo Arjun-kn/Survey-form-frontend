@@ -87,7 +87,7 @@ export default function Loginform() {
             onChange={(e) => setdata({ ...data, password: e.target.value })}
           />
           <hr />
-          <button className="btn" type="submit">
+          <button className="signbtn" type="submit">
             Sign in
           </button>
         </form>

@@ -5,7 +5,7 @@ import { BrowserRouter,Routes, Route } from 'react-router-dom';
 import Register from './components/Register/Register';
 import Postform from './components/Postform/Postform';
 import Dashboard from './components/Dashboard/Dashboard';
-import QuestionCard from './components/Question/Question';
+import QuestionCard from './components/Question/QuestionCard';
 import Theme from './components/Theme/Theme';
 import Preview from './components/Preview/Preview';
 
@@ -19,6 +19,7 @@ function App() {
 <Route path="/register" element={<Register />} />
 <Route path="/home"  element={<Dashboard/>}/>
 <Route path="/postform"  element={<Postform/>} />
+<Route path="/question"  element={<QuestionCard/>}/>
 </Routes>
 </BrowserRouter>
 </>

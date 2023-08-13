@@ -10,7 +10,8 @@ import Sidebar from '../Side_Navbar/Sidebar';
 function Dashboard() {
   
   const [data, setData] = useState([]);
-  // const [editMode, setEditMode] = useState({})
+  const [editData, setEditedData] = useState({})
+  const [error,setError] = useState(false)
   const navigate = useNavigate()
 
   function handleCreate(){
@@ -47,11 +48,45 @@ function Dashboard() {
     .then(response => response.json())
     
     .then(data => {
-      setData(prevData => prevData.filter(item => item._id !== postId));
+    setData(prevData => prevData.filter(item => item._id !== postId));
     })
     .catch(error => console.error('Error deleting post:', error));
   };
+  //....................................................................................
+  function handleEditPost(PostId,e){
+    e.stopPropagation(false);
+    setError(true)
+    console.log(PostId)
+    const postToEdit = data.find(item => item._id === PostId);
+    setEditedData({ ...editData, [PostId]: { ...postToEdit } });
+  }
 
+
+  const handleSaveEdit = (postId) => {
+    const token = sessionStorage.getItem('token');
+    
+    fetch(`http://localhost:8080/userpost/${postId}`, {
+      method: 'PUT', 
+      headers: {
+        'Authorization': `${token}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(editData[postId])
+    })
+    .then(response => response.json())
+    .then(updatedRecord => {
+      setData(prevData =>
+        prevData.map(item =>
+          item._id === postId ? updatedRecord.data : item
+        )
+      );
+
+      setEditedData({ ...editData, [postId]: {} });
+      setError(false);
+    })
+    .catch(error => console.error('Error updating post:', error));
+  };
+//......................................................................................
   return (
     <div >
       <Sidebar/>
@@ -84,14 +119,71 @@ function Dashboard() {
         <tbody>
           {data.map(item => (
             <tr key={item._id}>
-              <td>{item.Name}</td>
+              <td>{error && editData[item._id]? (
+                <input
+                  type="text"
+                  value={editData[item._id].Name}
+                  onChange={(e) =>
+                    setEditedData(prevEditData => ({
+                      ...prevEditData,
+                      [item._id]: { ...editData[item._id], Name: e.target.value }
+                    }))
+                  }
+
+                />
+              ) : (
+                item.Name
+              )}</td>
               <td>{item.Description}</td>
-              <td>{item.Type}</td>
-              <td>{item.Star_Date}</td>
-              <td>{item.End_Date}</td>
+              <td>{error && editData[item._id]? (
+                <input
+                  type="text"
+                  value={editData[item._id].Type}
+                  onChange={(e) =>
+                    setEditedData(prevEditData => ({
+                      ...prevEditData,
+                      [item._id]: { ...editData[item._id], Type: e.target.value }
+                    }))
+                  }
+
+                />
+              ):(item.Type)}</td>
+              <td>{error && editData[item._id]? (
+                <input
+                  type="date"
+                  value={editData[item._id].Start_Date}
+                  onChange={(e) =>
+                    setEditedData(prevEditData => ({
+                      ...prevEditData,
+                      [item._id]: { ...editData[item._id], Start_Date: e.target.value }
+                    }))
+                  }
+
+                />
+              ):(item.Start_Date)}</td>
+              <td>{error && editData[item._id]? (
+                <input
+                  type="date"
+                  value={editData[item._id].End_Date}
+                  onChange={(e) =>
+                    setEditedData(prevEditData => ({
+                      ...prevEditData,
+                      [item._id]: { ...editData[item._id], End_Date: e.target.value }
+                    }))
+                  }
+
+                />
+              ):(item.End_Date)}</td>
               <td>
-               <img src={edit} alt="edit" style={{height:"26px",width:"26px",filter:"invert(50%)",margin:"5px"}} />
+              {error && editData[item._id] ? (
+                  <>
+                    <button  className='signbtn' onClick={() => handleSaveEdit(item._id)}>Save</button>
+                    
+                  </>
+                ):(<>
+               <img src={edit} alt="edit"  onClick={(e)=> handleEditPost(item._id,e)} style={{height:"26px",width:"26px",filter:"invert(50%)",margin:"5px"}} />
                <img src={bin} alt="delete" onClick={() => handleDeletePost(item._id)} style={{height:"26px",width:"26px",filter:"invert(50%)"}} />
+               </>)}
               </td>
             </tr>
           ))}
