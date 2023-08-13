@@ -3,6 +3,10 @@
   height: 100vh;
   display: flex;
   justify-content: space-around;
+    
+  /* height: 100vh; */
+  background-image: linear-gradient(to bottom,white 30%,#6ED4FF 70%);
+  background-repeat: no-repeat;
 }
 /*Extra*/
 .text-container {
@@ -46,7 +50,7 @@
   width: 40%;
   height: 60%;
   background-color: white;
-  border-radius: 20px;
+  border-radius: 30px;
   margin: auto;
   box-shadow: 5px 10px 18px #888888;
 }
