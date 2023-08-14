@@ -8,6 +8,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 import QuestionCard from './components/Question/QuestionCard';
 import Theme from './components/Theme/Theme';
 import Preview from './components/Preview/Preview';
+import Protectedroute from './components/Protect/Protectedroute';
 
 
 function App() {
@@ -16,11 +17,11 @@ function App() {
 <BrowserRouter>
 <Routes>
 <Route  path="/" element={<Login/>}/>
-<Route path="/register" element={<Register />} />
-<Route path="/home"  element={<Dashboard/>}/>
-<Route path="/postform"  element={<Postform/>} />
-<Route path="/question"  element={<QuestionCard/>}/>
-<Route path='/preview' element={<Preview />} />
+<Route path="/register" element={<Register/>} />
+<Route path="/home"  element={<Protectedroute Component={Dashboard}/>}/>
+<Route path="/postform"  element={<Protectedroute Component={Postform}/>} />
+<Route path="/question"  element={<Protectedroute Component={QuestionCard}/>}/>
+<Route path='/preview' element={<Protectedroute Component={Preview}/>} />
 </Routes>
 </BrowserRouter>
 </>
