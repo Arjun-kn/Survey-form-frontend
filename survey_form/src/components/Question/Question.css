@@ -130,3 +130,17 @@ input[type="radio"] {
     width: 10px;
     border-radius: 50%;
 }
+
+.popup{
+    width: 130px;
+    height: 81px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.del{
+    padding-left: 6px;
+    font-weight: 600;
+}

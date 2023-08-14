@@ -204,3 +204,7 @@ thead{
 .tablebody{
   background-color:#297ec027
 }
+
+.log:focus{
+  background-color: orange;
+}

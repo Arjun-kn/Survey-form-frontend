@@ -44,7 +44,7 @@ const Sidebar=()=>{
                 <ul>
                   <li>Profile</li>
                   <li>Settings</li>
-                  <li onClick={handleLogout}>Logout</li>
+                  <li onClick={handleLogout} className="log">Logout</li>
                 </ul>
               </div>
             )}

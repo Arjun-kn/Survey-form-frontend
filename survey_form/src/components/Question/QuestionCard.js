@@ -47,8 +47,8 @@ const QuestionCard = () => {
             <h6>Q{index + 1}
               <span className="setting-card">
                 <button onClick={() => handleBtn(index)}>
-                  {question.popup ? (<form>
-                    <label className="questionType" htmlFor="questionType">Question-Type</label>
+                  {question.popup ? (<form className='popup'>
+                    <label className="questionType" htmlFor="questionType">Question-Type<span className='del'>X</span></label>
                     <select className="selectQuestion" name="QuestionType" id="questionType">
                       <option value="Multiple Choice">Multiple Choice</option>
                     </select>
