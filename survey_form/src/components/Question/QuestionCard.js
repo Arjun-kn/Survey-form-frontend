@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import '../Question/Question.css'
 import { Link} from "react-router-dom";
 import gear from '../Question/gear.png'
@@ -8,15 +9,20 @@ import Sidebar from '../Side_Navbar/Sidebar';
 import ThemeWrapper from '../Wrapper/Wrapper';
 
 const QuestionCard = () => {
-  const [questions, setQuestions] = useState([{ questionNo: 1 }]);
-  const [popup, setPopup] = useState(false)
-  const handleBtn = () => {
-    setPopup(!popup)
+  const [questions, setQuestions] = useState([{ questionNo: 1, popup : false }]);
+  const navigate = useNavigate()
+  const handleBtn = (index) => {
+    const newQuestions = [...questions];
+    newQuestions[index].popup = !newQuestions[index].popup;
+    setQuestions(newQuestions);
   }
   
+
+
+
   const handleCardClick = () => {
     const newQuestionNo = questions.length + 1;
-    const newQuestion = { questionNo: newQuestionNo };
+    const newQuestion = { questionNo: newQuestionNo, popup : false };
     setQuestions([...questions, newQuestion]);
   };
 
@@ -27,8 +33,11 @@ const QuestionCard = () => {
         <div className="question-header">
           <Link><img src={leftArrow} alt="leftArrow" /></Link> <span>Create Question</span>
           <div className="btn-container">
+
             <ThemeWrapper/>
-            <button className="previewbtn">Preview</button>
+           
+            <button className="previewbtn" onClick={() => navigate('/preview')}>Preview</button>
+
             <button className="savebtn">Save</button>
           </div>
         </div>
@@ -37,8 +46,8 @@ const QuestionCard = () => {
             <div className="question-setting"><span>
             <h6>Q{index + 1}
               <span className="setting-card">
-                <button onClick={(e) => handleBtn(e)}>
-                  {popup ? (<form>
+                <button onClick={() => handleBtn(index)}>
+                  {question.popup ? (<form>
                     <label className="questionType" htmlFor="questionType">Question-Type</label>
                     <select className="selectQuestion" name="QuestionType" id="questionType">
                       <option value="Multiple Choice">Multiple Choice</option>
@@ -65,5 +74,4 @@ const QuestionCard = () => {
     </div>
   );
 }
-
 export default QuestionCard

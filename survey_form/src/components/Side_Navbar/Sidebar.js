@@ -18,7 +18,7 @@ const Sidebar=()=>{
           <div className="app">
       <div className="sidebar">
         <div className="sidebar-icon"><img src={home} alt="home-icon" style={{marginTop:"160px",left: "27px",width: "26px",height: "26px"}}/></div>
-        <div style={{backgroundColor:"white",width:"70px",height:"40px"}}>
+        <div style={{backgroundColor:"white",width:"60px",height:"40px"}}>
         <div className="sidebar-icon" style={{textAlign:"center"}}><img src={community} alt="community icon" style={{ width: '30px', height: '26px',marginTop:"6px"}}/></div>
         </div>
         <div className="sidebar-icon"><img src={menu} className='menu-icon' alt="menubar" style={{ marginTop:"25px",width: '30px', height: '30px'}}/></div>

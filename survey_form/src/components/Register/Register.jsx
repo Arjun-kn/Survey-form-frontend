@@ -92,7 +92,7 @@ function Register() {
           </button>
         </div>
       </div>
-      <div className="card">
+      <div className="form-card">
         <h1>Register</h1>
         <p>Register to continue access pages</p>
         <form onSubmit={submitHandler} method="POST" className="inputs">
