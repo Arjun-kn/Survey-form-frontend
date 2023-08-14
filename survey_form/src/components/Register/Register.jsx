@@ -64,7 +64,12 @@ function Register() {
           console.log("Backend response:", responseData);
         } else {
           // Handle error response
+         //..............................................................
+
           const errorResponseData = await response.text();
+          if (response.status === 400) {
+            console.log(response)
+            setErrs("User already exists");}
           console.log("Error response from backend:", errorResponseData);
         }
       } catch (error) {
