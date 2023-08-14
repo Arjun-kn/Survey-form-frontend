@@ -31,7 +31,7 @@ const QuestionCard = () => {
       <Sidebar />
       <div className="container">
         <div className="question-header">
-          <Link><img src={leftArrow} alt="leftArrow" /></Link> <span>Create Question</span>
+          <Link to="/postform"><img src={leftArrow} alt="leftArrow" /></Link> <span >Create Question</span>
           <div className="btn-container">
 
             <ThemeWrapper/>
