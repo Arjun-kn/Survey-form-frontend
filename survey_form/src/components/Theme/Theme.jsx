@@ -13,7 +13,13 @@ function Theme(onClose) {
         <div className='form-content'>
           <div className='theme'>
             <label htmlFor="theme">Theme</label> <br />
-            <input type="text" placeholder='Select' name="Theme" id="theme" />
+            <select>
+            <option disabled selected value="" className="default">
+                Select
+              </option>
+              <option>Fluent Dark</option>
+              <option>High Contrast</option>
+            </select>
           </div>
           {/* input 1st row */}
 
@@ -76,7 +82,11 @@ function Theme(onClose) {
           <div className="row bottom">
             <div className="col-md-4">
               <label htmlFor="font" className="form-label">Font</label>
-              <input type="text" placeholder='Robot' className="form-control" id="font" />
+              <select>
+                <option>Arial</option>
+                <option>Times New Roman</option>
+                <option>Sans-serif</option>
+              </select>
             </div>
             <div className="col-md-4">
             <label htmlFor="font" className="form-label">Color</label>

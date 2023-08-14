@@ -17,7 +17,9 @@ const QuestionCard = () => {
     setQuestions(newQuestions);
   }
   
-
+function handleSave(){
+  navigate('/home')
+}
 
 
   const handleCardClick = () => {
@@ -38,7 +40,7 @@ const QuestionCard = () => {
            
             <button className="previewbtn" onClick={() => navigate('/preview')}>Preview</button>
 
-            <button className="savebtn">Save</button>
+            <button className="savebtn" onClick={handleSave}>Save</button>
           </div>
         </div>
         {questions.map((question, index) => (
