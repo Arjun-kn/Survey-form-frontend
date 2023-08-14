@@ -109,4 +109,5 @@ input:focus {
 .errMsg {
     color: red;
     text-align: center;
+    text-shadow: 1px 1px 1px #000;
 }

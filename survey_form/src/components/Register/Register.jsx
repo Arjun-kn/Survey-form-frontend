@@ -37,6 +37,10 @@ function Register() {
       setErrs(`Profession required`);
     } else if (user.password !== confirmPass) {
       setErrs(`Passwords are not matching`);
+    } else if (user.password.length < 3) {
+      setErrs(`Passwords should not be less than 3 character`);
+    } else if (user.password.length > 10) {
+      setErrs(`Passwords should not be more than 10 character`);
     } else {
       try {
         const response = await fetch("http://localhost:8080/register", {
