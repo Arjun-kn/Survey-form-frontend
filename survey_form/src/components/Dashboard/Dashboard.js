@@ -96,11 +96,11 @@ function Dashboard() {
         <div className="left-section">
       <span className="search-name"><b>Search list</b></span>
       <div className="search-icon">
-        <input type="search" placeholder="Search" className="search-input" />
         <div className="custom-icon">
           <img src={search} style={{width:"18px",height:"18px",filter:"invert(50%)"}}/>
         </div>
-        <div className="search-line"></div>
+        {/* <div className="search-line"></div> */}
+        <input type="search" className="search-input" />
       </div>
     </div>
         <div className="right-section">

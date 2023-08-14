@@ -5,12 +5,20 @@ import home from "../Dashboard/Icons/home-run.svg"
 import community from "../Dashboard/Icons/icons8-community-30.png"
 import menu from "../Dashboard/Icons/list.png"
 import drop from "../Dashboard/Icons/down.png"
+import { useNavigate } from "react-router-dom";
 const Sidebar=()=>{
     const [showDropdown, setShowDropdown] = useState(false);
 
     const toggleDropdown = () => {
         setShowDropdown(!showDropdown);
       };
+
+      let navigate = useNavigate()
+
+      function handleLogout(){
+        sessionStorage.removeItem('token')
+        navigate('/')
+      }
     
    
     return(
@@ -36,7 +44,7 @@ const Sidebar=()=>{
                 <ul>
                   <li>Profile</li>
                   <li>Settings</li>
-                  <li>Logout</li>
+                  <li onClick={handleLogout}>Logout</li>
                 </ul>
               </div>
             )}

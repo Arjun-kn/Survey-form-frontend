@@ -138,10 +138,9 @@ align-items: center;
 }
 
 .search-input {
-  display: none;
-  border: none;
-  outline: none;
-  padding: 0;
+ width:160px;
+ border:none;
+ border-bottom: 2px solid #E6E6E6;
 }
 
 
