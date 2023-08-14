@@ -197,3 +197,11 @@ margin-left: 60px;
   width: 80%;
   margin-left: 100px;
 }
+
+thead{
+  background: #124bda 0% 0% no-repeat padding-box;
+}
+
+.tablebody{
+  background-color:#297ec027
+}

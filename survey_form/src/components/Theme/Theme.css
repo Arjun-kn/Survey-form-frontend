@@ -8,12 +8,13 @@
 
 
 .form {
-    width: 800px;
-    height: 450px;
-    top: 154px;
-    left: 374px;
+    width: 750px;
+    height: 473px;
+    margin-top: 20px;
+    /* top: 154px;
+    left: 374px; */
     background: #fff;
-    border: 1px solid #707070;
+    border:none;
     border-radius: 20px;
 }
 

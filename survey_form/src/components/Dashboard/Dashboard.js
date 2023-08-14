@@ -114,7 +114,7 @@ function Dashboard() {
         </div>
       </div>
       <table className='table'>
-        <thead>
+        <thead className='tablehead'>
           <tr>
             <th>Name</th>
             <th>Description</th>
@@ -124,7 +124,7 @@ function Dashboard() {
             <th>Actions</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className='tablebody'>
           {data.map(item => (
             <tr key={item._id}>
               <td>{error && editData[item._id]? (
