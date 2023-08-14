@@ -134,7 +134,19 @@ function Dashboard() {
               ) : (
                 item.Name
               )}</td>
-              <td>{item.Description}</td>
+              <td>{error && editData[item._id]? (
+                <input
+                  type="text"
+                  value={editData[item._id].Description}
+                  onChange={(e) =>
+                    setEditedData(prevEditData => ({
+                      ...prevEditData,
+                      [item._id]: { ...editData[item._id], Description: e.target.value }
+                    }))
+                  }
+
+                />
+              ):(item.Description)}</td>
               <td>{error && editData[item._id]? (
                 <input
                   type="text"
