@@ -19,6 +19,7 @@ const QuestionCard = () => {
   
 function handleSave(){
   navigate('/home')
+  alert("Data saved  successfully")
 }
 
 

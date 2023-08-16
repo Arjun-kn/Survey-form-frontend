@@ -2,6 +2,9 @@ import React from 'react'
 import '../Theme/Theme.css'
 
 function Theme(onClose) {
+  function saveTheme(){
+    alert("Theme applied successfully")
+  }
  
   return (
        <div>
@@ -100,7 +103,7 @@ function Theme(onClose) {
             <button className='cancel-btn'>Cancel</button>
           </div>
           <div className="col-md-3">
-            <button className='save-btn'>Save</button>
+            <button className='save-btn' onClick={saveTheme}>Save</button>
           </div>
         </div>
           </footer>

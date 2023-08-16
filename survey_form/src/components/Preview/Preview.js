@@ -7,9 +7,11 @@ const Preview = () => {
     const navigate = useNavigate()
     const handleSave = () => {
         navigate('/home')
+        alert("Data saved successfully")
     }
     const handleClosePreview = () => {
         navigate('/question')
+
     }
     return (
         <div>

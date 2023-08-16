@@ -8,11 +8,14 @@ function ThemeWrapper() {
   const [isThemePopupOpen, setIsThemePopupOpen] = useState(false);
 
   const handleOpenPopup = () => {
+    
     setIsThemePopupOpen(true);
   };
 
   const handleClosePopup = () => {
+   
     setIsThemePopupOpen(false);
+    
   };
 
   return (
