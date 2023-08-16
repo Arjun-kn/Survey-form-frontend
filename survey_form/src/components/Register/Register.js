@@ -43,7 +43,7 @@ function Register() {
       setErrs(`Passwords should not be more than 10 character`);
     } else {
       try {
-        const response = await fetch("http://localhost:8080/register", {
+        const response = await fetch("https://survey-from-backend-la8p.onrender.com/register", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

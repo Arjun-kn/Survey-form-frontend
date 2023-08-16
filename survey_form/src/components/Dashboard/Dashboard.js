@@ -21,7 +21,7 @@ function Dashboard() {
   useEffect(() => {
     const token = sessionStorage.getItem("token");
 
-    fetch("http://localhost:8080/userpost", {
+    fetch("https://survey-from-backend-la8p.onrender.com/userpost", {
       method: "GET",
       headers: {
         Authorization: `${token}`,
@@ -38,7 +38,7 @@ function Dashboard() {
 
   const handleDeletePost = (postId) => {
     const token = sessionStorage.getItem("token");
-    fetch(`http://localhost:8080/userpost/${postId}`, {
+    fetch(`https://survey-from-backend-la8p.onrender.com/userpost/${postId}`, {
       method: "DELETE",
       headers: {
         Authorization: `${token}`,
@@ -63,7 +63,7 @@ function Dashboard() {
   const handleSaveEdit = (postId) => {
     const token = sessionStorage.getItem("token");
 
-    fetch(`http://localhost:8080/userpost/${postId}`, {
+    fetch(`https://survey-from-backend-la8p.onrender.com/userpost/${postId}`, {
       method: "PUT",
       headers: {
         Authorization: `${token}`,

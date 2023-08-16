@@ -51,7 +51,7 @@ function Postform() {
     setError("");
 
     const token = sessionStorage.getItem("token");
-    fetch(`http://localhost:8080/userpost`, {
+    fetch(`https://survey-from-backend-la8p.onrender.com/userpost`, {
       method: "POST",
       headers: {
         Authorization: `${token}`,

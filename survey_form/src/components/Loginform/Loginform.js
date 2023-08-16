@@ -26,7 +26,7 @@ export default function Loginform() {
       setError("password should not be more than 10 character");
     } else {
       try {
-        let response = await fetch("http://localhost:8080/signin", {
+        let response = await fetch("https://survey-from-backend-la8p.onrender.com/signin", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
