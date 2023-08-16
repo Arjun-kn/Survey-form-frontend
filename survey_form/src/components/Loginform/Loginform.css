@@ -1,0 +1,52 @@
+.heading{
+    margin-left: 100px;
+}
+
+.para{ margin-left: 50px;
+       color:#808080;
+}
+
+.inp{
+    margin-left: 10px;
+    border: none;
+    background-color: transparent;
+    padding-left: 3px;
+    height:20px;
+    
+
+}
+.inp:focus{
+    outline: none;
+}
+
+label{
+    color:#808080
+}
+
+.signbtn{
+    width:100px;
+    height:30px;
+    font-size: 15px;
+    font-weight: 900;
+    letter-spacing: 0.8px;
+    border-radius: 30px;
+    color: white;
+    background-color:#278DF1 ;
+    border: none;
+    margin-top: 30px;
+    margin-left:100px ;
+}
+
+hr{
+    color: #808080;
+}
+
+.error{
+    color:red;
+    margin-left: 60px;
+    text-shadow: 1px 1px 1px #000;
+}
+
+.hoveronbtn:focus{
+ background-color: orange;
+}

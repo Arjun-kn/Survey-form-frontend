@@ -1,0 +1,101 @@
+.container {
+    background-color: #FFFFFF;
+    height: 100vh;
+    margin-left: 62px;
+    width: 949px;
+    margin-top: 4px;
+}
+
+.cardStyle {
+    width: 75%;
+    height: 100px;
+    background-color: #F4F8FD;
+    margin: 15px auto;
+    font-size: 14px;
+    padding-left: 30px;
+}
+.cardStyle>label {
+    font-size: 14px;
+}
+
+.cardStyle>input[type="text"] {
+    font-size: 14px;
+    width: 50%;
+}
+
+.btnStyle {
+    margin-left: 45%;
+    margin-right: 45%;
+    width: 5%;
+    height: 30px;
+    align-items: center;
+    width: 100px;
+    justify-content: center;
+    font-family: Open Sans;
+    background-color: #8C95AF;
+    color: #fff;
+    border: none;
+}
+
+.question-header {
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+}
+
+.btn-container {
+    margin-left: auto;
+    display: flex;
+    gap: 10px;
+}
+
+.btn-container>button {
+    padding: 8px 15px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.theme-btn {
+    background-color: #8A5DEF;
+    border: 1.5px #8A5DEF;
+    text-align: center;
+    font: normal normal bold 16px/22px Open Sans;
+    letter-spacing: 0.16px;
+    opacity: 1;
+    color: #FFFFFF;
+}
+
+.closepreview-btn {
+    background-color: #278DF1;
+    color: #FFFFFF;
+    font-size: 16px;
+}
+
+.save-btn {
+    background-color: #278DF1;
+    color: #fff;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    font: normal normal bold 16px/22px Open Sans;
+    letter-spacing: 0.16px;
+    opacity: 1;
+}
+.question-clr {
+    color: #278DF1;
+}
+
+.cardStyle > h6 {
+    font-size: 16px;
+}
+.option-container > label {
+    margin-left: 20px;
+    font-size: 14px;
+}
+.option-container > input {
+    margin: 10px;
+    padding: 20px;
+}
