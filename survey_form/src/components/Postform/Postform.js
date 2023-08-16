@@ -60,9 +60,7 @@ function Postform() {
       body: JSON.stringify(newdata),
     })
       .then((response) => response.json())
-      .then((response) => {
-        console.log(response.data);
-      })
+
       .catch((error) => console.error("Error creating survey:", error));
 
     navigate("/question");

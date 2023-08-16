@@ -36,24 +36,22 @@ export default function Loginform() {
             password: data.password,
           }),
         });
-        // console.log(response)
+
         const responseData = await response.json();
-        console.log(responseData)
+
         if (response.ok) {
           setError("");
 
-          const token = responseData
-          // console.log(token);
+          const token = responseData;
+
           sessionStorage.setItem("token", token);
           navigate("/home");
         } else {
           setError("Invalid credential");
         }
       } catch (error) {
-        console.log(data);
         setError("An error occurred. Please try again later");
       }
-
     }
 
     setTimeout(() => {

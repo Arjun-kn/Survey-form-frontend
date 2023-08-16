@@ -60,17 +60,14 @@ function Register() {
         if (response.ok) {
           setErrs("");
           navigate("/");
-          const responseData = await response.json();
-          console.log("Backend response:", responseData);
+          await response.json();
         } else {
-          // Handle error response
-         //..............................................................
+          //..............................................................
 
-          const errorResponseData = await response.text();
+          await response.text();
           if (response.status === 400) {
-            console.log(response)
-            setErrs("User already exists");}
-          console.log("Error response from backend:", errorResponseData);
+            setErrs("User already exists");
+          }
         }
       } catch (error) {
         console.log("errdesc" + error);
@@ -80,7 +77,6 @@ function Register() {
     setTimeout(() => {
       setErrs("");
     }, 3000);
-    //console.log(user)
   }
 
   return (
