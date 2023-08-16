@@ -24,7 +24,7 @@ function ThemeWrapper() {
       {isThemePopupOpen && (
         <div className="theme-popup-overlay">
           <div className="theme-popup">
-            <Theme onClose={handleClosePopup} />
+            <Theme onClose={handleClosePopup}  />
           </div>
         </div>
       )}

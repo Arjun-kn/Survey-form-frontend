@@ -1,10 +1,17 @@
 import React from 'react'
 import '../Theme/Theme.css'
+import { useNavigate } from 'react-router-dom/dist/umd/react-router-dom.development'
 
-function Theme(onClose) {
-  function saveTheme(){
-    alert("Theme applied successfully")
-  }
+function Theme(props) {
+const {onClose} = props
+  let navigate = useNavigate()
+
+ 
+
+  // function cancelTheme(){
+  //   navigate('/question')
+  // }
+
  
   return (
        <div>
@@ -100,10 +107,10 @@ function Theme(onClose) {
           <footer className='footer'>
           <div className="row justify-content-center">
           <div className="col-md-3">
-            <button className='cancel-btn'>Cancel</button>
+            <button className='cancel-btn' onClick={onClose}>Cancel</button>
           </div>
           <div className="col-md-3">
-            <button className='save-btn' onClick={saveTheme}>Save</button>
+            <button className='save-btn' onClick={onClose}>Save</button>
           </div>
         </div>
           </footer>
